@@ -1,0 +1,71 @@
+<div class="wrapper" id="header">
+  <div class="inner">
+    <blockquote>&nbsp;</blockquote>
+    <div class="head">
+      <div class="head_nav">
+        <div class="nav" frag="面板11">
+          <div frag="窗口11"><div id="wp_nav_w11"> 
+        </div>
+        </div>
+<ul class="wp_nav" data-nav-config="{drop_v: &#39;down&#39;, drop_w: &#39;right&#39;, dir: &#39;y&#39;, opacity_main: &#39;-1&#39;, opacity_sub: &#39;-1&#39;, dWidth: &#39;0&#39;}">
+      
+     <li class="nav-item i1"> 
+         <a href="/home?session=<%= session %>" title="首     页" target="_self"><span class="item-name">首     页</span></a><i class="mark"></i> 
+     </li> 
+     
+     <li class="nav-item i1"> 
+         <a href="#" title="公共资料" target="_self"><span class="item-name">公共资料</span></a><i class="mark"></i> 
+     </li> 
+     
+     <% if (type >= 1 ) {%>
+    <li class="nav-item i1"> 
+         <a href="#" title="项目资料" target="_self"><span class="item-name">项目资料</span></a><i class="mark"></i> 
+     </li>
+     <% } %>
+     
+     <% if (type >= 2 ) {%>
+    <li class="nav-item i1"> 
+         <a href="#" title="保密资料" target="_self"><span class="item-name">保密资料</span></a><i class="mark"></i> 
+     </li>
+     <% } %>
+     <% if (type >= 4 ) {%>
+         <% if (type == 5 ) {%>
+     <li class="nav-item i3"> 
+         <a href="/user/<%= session %>/" title="用户角色管理" target="_self"><span class="item-name">用户角色管理</span></a><i class="mark"></i>         
+     </li> 
+    
+        <% } %>
+
+     <li class="nav-item i5"> 
+         <a href="#" title="项目资料审批" target="_self"><span class="item-name">项目资料审批</span></a><i class="mark"></i>         
+     </li>
+     
+      <li class="nav-item i7"> 
+         <a href="#" title="发布公告" target="_self"><span class="item-name">发布公告</span></a><i class="mark"></i>         
+     </li>
+     
+     
+    <li class="nav-item i4"> 
+         <a href="#" title="文件上传" target="_self"><span class="item-name">文件上传</span></a><i class="mark"></i>         
+     </li>
+     
+    <% } %>
+    
+    <% if (type ==3 ) {%>
+    <li class="nav-item i4"> 
+         <a href="#" title="文件上传" target="_self"><span class="item-name">文件上传</span></a><i class="mark"></i>         
+    </li>
+    <% } %>
+    
+     <li class="nav-item i6"> 
+         <a href="#" title="EnglishVersion" target="_self"><span class="item-name">EnglishVersion</span></a><i class="mark"></i>         
+     </li>      
+</ul> 
+ 
+ 
+ </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

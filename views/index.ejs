@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<html>
+<head lang="zh-CN"> 
+<% include nav_type.ejs %>
+<script src="/js/cookie-1.1.js"></script>  
+<style type="text/css">
+body { width: 80%;heigth:100%; margin: 40px auto; border: 1px solid #999; padding: 0 20px 0 0;  border-radius:10px;}
+li{list-style: none;}
+h2 {text-align: center;}
+</style>
+</head>
+<body>
+<% include nav.ejs %>
+<br/><br/><br/>
+
+<h2 id="note-body-head">重要通知</h2>
+<div id="note-body">
+	<ul id="notice_001">
+	</ul>
+</div>
+</body>
+<script>
+data=<%- data_publish %>
+for(var i=0 ;i <data.length;i++ )
+{
+    t=data[i].title
+    c=data[i].content
+    id=data[i].id
+    document.getElementById("notice_001").innerHTML += 
+    "<u><li>" + 
+    "<a color=\"blue\"  font-size=\"50px\" id=\"mylistid\"   href=\"/home/"+id
+    +"/\">" 
+    +t+"</a>" +"</li></u>" +"<br/>"
+}
+function add1( c ,t )
+{
+    document.getElementById("note-body").innerHTML = c 
+    document.getElementById("note-body-head").innerHTML = t
+}
+</script>
+
+</html>

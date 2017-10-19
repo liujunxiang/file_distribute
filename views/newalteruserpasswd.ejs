@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>修改密码</title>
+    <% include nav_type.ejs %>
+	<link rel="stylesheet" href="/bootstrap/buttons.css"> 
+</head>
+<script>
+function upload(input) {
+	//支持chrome IE10
+	if (window.FileReader) {
+		var file = input.files[0];
+		filename = file.name.split(".")[0];
+		var reader = new FileReader();
+		reader.onload = function() {
+			//console.log(this.result)
+            //alert('1')
+			//alert(this.result);
+            $("#msg_error_or_debug").html( this.result ) ;
+		}
+		reader.readAsText(file);
+	} 
+	//支持IE 7 8 9 10
+	else if (typeof window.ActiveXObject != 'undefined'){
+		var xmlDoc; 
+		xmlDoc = new ActiveXObject("Microsoft.XMLDOM"); 
+		xmlDoc.async = false; 
+		xmlDoc.load(input.value); 
+        $("#msg_error_or_debug").html( xmlDoc.xml  ) ;
+	} 
+	//支持FF
+	else if (document.implementation && document.implementation.createDocument) { 
+		var xmlDoc; 
+		xmlDoc = document.implementation.createDocument("", "", null); 
+		xmlDoc.async = false; 
+		xmlDoc.load(input.value); 
+		//alert(xmlDoc.xml);
+        $("#msg_error_or_debug").html( xmlDoc.xml  ) ;
+	} else { 
+		alert('error'); 
+	} 
+}
+
+function debug(  str )
+{
+    document.getElementById("msg_error_or_debug").innerText=str;  
+}
+function  f()
+{
+    var obj = new Object();
+    obj.passwd=$("#passwd").val()
+    //alert( JSON.stringify( data) ) 
+    $.ajax({
+    url:  "/alteruserpasswd/user/", 
+    data:JSON.stringify(obj), 
+    contentType: "application/json; charset=utf-8",
+    dataType:'json', 
+    type:'post', 
+    async: false,
+    success : function ( data) 
+    {
+        if( typeof(data.res) != 'undefined' )
+        {
+            if( data.res == 200  )
+            {
+                window.close();
+                //document.getElementById("result").innerHTML="上传成功"
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="上传失败";
+            }
+        }
+    }
+    }
+    );
+}
+</script>
+<body>
+<ul class="list-group" id="list_groups">
+    
+    <li class="list-group-item">
+        <label for="firstname" class="col-sm-2 control-label">修改后的密码</label>
+        <input type="text" id="passwd" placeholder="请输入用户名"></input>
+    </li>
+	
+    
+</ul>
+<a onclick="f()" class="button button-raised button-royal">修改密码</a>
+<span ><font id="result" color="#FF0000"></font></span>
+</body>
+</html>

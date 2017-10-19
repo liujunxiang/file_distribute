@@ -1,0 +1,123 @@
+<html>  
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<head>  
+<% include nav_type.ejs %>
+<script type="text/javascript" src="/bootstrap/jquery-1.12.4.js"></script>  
+<script type="text/javascript" src="/bootstrap/com.js"></script>  
+<script type="text/javascript" src="/bootstrap/jquery.dataTables.min.js"></script>  
+<link rel="stylesheet" type="text/css" href="/bootstrap/jquery.dataTables.min.css">
+<script src="/js/cookie-1.1.js"></script>  
+<script type="text/javascript">
+var _d = new Object
+var UserDataSet = <%- user_dataset %>
+for ( var i = 0 ; i <UserDataSet.length ;i++ )
+{
+    for( var  j = 0 ; j <UserDataSet[i].length ;j++ )
+    {
+        
+        if ( typeof( UserDataSet[i][j] ) == typeof( new Object()  ))
+        {
+            UserDataSet[i][j]  = JSON.stringify ( UserDataSet[i][j]  )
+        }
+    }
+    
+}
+user_column=<%- user_column %>
+var obj=new Object()
+obj.title=""
+
+
+var timer 
+var winOpen 
+function IfWindowClosed() { 
+if (winOpen.closed == true) { 
+    self.location='/file/list/'
+    window.clearInterval(timer) 
+} 
+
+} 
+
+
+$(document).ready(function() 
+	{
+		var tables=$('#user').DataTable( {
+			data: UserDataSet,
+			columns: user_column,
+			"searching":false,
+			"autoWidth":true,
+			"info":false,
+			"lengthChange":false,
+			"columnDefs": [
+				{
+					"targets": 2,
+					"visible": false,
+					"searchable": false
+				},
+				{
+				"targets": 1,
+				"mRender":function(data,type,full){
+					var str='<a href="/'+full[2]+'">'+data+"</a>"
+					return str
+				 }
+				}
+				],
+            "columns": [ 
+                {"title":"主题" },
+                {"title":"文件名称"},
+                null,
+                {"title":"发布时间"},
+                {"title":"上传者"},
+            ],
+		} );
+        
+   
+		$('#user tbody').on( 'click', 'button#delrow', function () {
+            var data = tables.row( $(this).parents('tr') ).data();
+			$.ajax({
+                url: '/file/del/',
+                type: 'POST',
+                dataType: 'json',
+                data: {title: data[0] , filename:data[1] , size:data[2] , userid:data[3] },
+            })
+            .success( function()
+            {
+                self.location='/file/list/'
+            })
+            .done(function(data) {
+            })
+            .fail(function() {
+                alert("删除数据失败");
+            });
+        });
+	} 
+
+);
+
+
+
+</script>
+        <style >
+        .table_caption{
+            font-family:Georgia;
+            font-size: 25px;
+            text-align: left;
+        }
+        #user
+        {
+            background-color: #1E8;
+            margin-top:0%;
+        }
+        </style>
+</head> 
+
+<body> 
+<% include nav.ejs %>
+<br /><br />
+<p class="table_caption"></p>    
+<table id="user" class="display" width="100%" height="300px"></table>
+</br>
+</br>
+</br>
+
+</body>  
+</html>  

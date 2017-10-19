@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-size: 12px;
+	background-color: #FFF;
+	margin: 0px;
+}
+.footer {
+	background-color: #393;
+	text-align: center;
+	vertical-align: middle;
+	border: thin solid #666;
+}
+.texttr {
+	background-color: #FFF;
+	border: thin solid #666;
+	color: #000;
+}
+
+.header {
+	border: thin solid #666;
+}
+
+.nav {
+	font-weight: bold;
+	background-color: #393;
+	text-align: center;
+	vertical-align: middle;
+	border: thin solid #666;
+	color: #FFF;
+}
+.univs {
+	padding-left: 25px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+.texttr table tr td #apDiv2 table tr td {
+}
+
+.coms {
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+a:hover {
+	color: #000;
+}
+.title1 {
+	font-weight: bold;
+	padding-left: 20px;
+	font-style: italic;
+	color: #393;
+}
+
+
+
+.texttr table tr td #apDiv2 table tr td {
+	color: #FFF;
+	background-color: #393;
+	font-weight: bolder;
+	padding-left: 25px;
+	border: thin solid #666;
+	text-decoration: none;
+}
+.texttr table tr td #apDiv3 table tr td {
+	font-weight: bold;
+	color: #FFF;
+	background-color: #393;
+	padding-left: 35px;
+	border: thin solid #666;
+}
+.texttr table tr td #apDiv4 table tr td {
+	font-weight: bold;
+	color: #FFF;
+	background-color: #393;
+	padding-left: 35px;
+	border: thin solid #666;
+}
+
+
+
+.nav2 {
+	font-weight: bold;
+	color: #FFF;
+	background-color: #393;
+	background-image: url(../images/down.gif);
+	background-repeat: no-repeat;
+	background-position: 20px 7px;
+	text-align: center;
+	vertical-align: middle;
+	border: thin solid #666;
+}
+#apDiv1 table tr td {
+	color: #FFF;
+	background-color: #393;
+	vertical-align: middle;
+	font-weight: bold;
+	padding-left: 35px;
+	border: thin solid #666;
+}
+.subtitle {
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 20px;
+	text-align: center;
+}
+.texttr table tr td table tr td a {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.texttr table tr td table tr td a:hover {
+	color: #F00;
+}
+.boundary {
+	background-color: #393;
+}

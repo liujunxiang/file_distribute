@@ -1,0 +1,161 @@
+<html>  
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<head>  
+<% include nav_type.ejs %>
+<script type="text/javascript" src="/bootstrap/jquery-1.12.4.js"></script>  
+<script type="text/javascript" src="/bootstrap/com.js"></script>  
+<script type="text/javascript" src="/bootstrap/jquery.dataTables.min.js"></script>  
+<link rel="stylesheet" type="text/css" href="/bootstrap/jquery.dataTables.min.css">
+<script src="/js/cookie-1.1.js"></script>  
+<script type="text/javascript">
+var _d = new Object
+var UserDataSet = <%- user_dataset %>
+for ( var i = 0 ; i <UserDataSet.length ;i++ )
+{
+    for( var  j = 0 ; j <UserDataSet[i].length ;j++ )
+    {
+        
+        if ( typeof( UserDataSet[i][j] ) == typeof( new Object()  ))
+        {
+            UserDataSet[i][j]  = JSON.stringify ( UserDataSet[i][j]  )
+        }
+    }
+    
+}
+myuser='<%= user %>'
+user_column=<%- user_column %>
+var obj=new Object()
+obj.title=""
+user_column1=new Array()
+user_column1.push( {title:"_id"})
+user_column1.push( {title:'项目名称'})
+user_column1.push( {title:'用户'})
+user_column1.push( {title:'项目角色'})
+var data=new Array()
+UserDataSet.forEach(function(row,index,arr){
+    var userlist=JSON.parse ( row[4] )
+    userlist.forEach( function(user,index1,arr1)
+    {
+        //alert( user.userid )
+        var obj=new Array()
+        obj.push(row[0] )
+        obj.push(row[1] )
+        obj.push(user.userid )
+        obj.push(user.type )
+        data.push( obj )
+    }    
+    )
+}
+)
+var timer 
+var winOpen 
+function IfWindowClosed() { 
+if (winOpen.closed == true) { 
+    self.location='/markdown/list/'
+    window.clearInterval(timer) 
+} 
+
+} 
+
+
+$(document).ready(function() 
+	{
+		var tables=$('#user').DataTable( {
+			data: data,
+			columns: user_column1,
+			"searching":false,
+			"autoWidth":true,
+			"info":false,
+			"lengthChange":false,
+			"columnDefs": [
+                {
+                    "targets":0,
+                    "visible":false
+                }
+				] , 
+                "columns":[
+                null,
+                {"title":"项目名称" ,"render" :function( data, type, full, meta) {
+                    str= "<a "+"href=\"/project/detail/"+full[0] +"\">"+ data+" (点击查看详细)"  +"</a>"
+                   // alert( str )
+                    return str
+                }},  
+                {"title":"用户" ,"render" :function( data, type, full, meta){ 
+                    if( data ==myuser )
+                    {
+                        return '<b><font color="red" size="3px">'+"当前用户"+"</font></b>"
+                    }
+                    else
+                    {
+                        return data
+                    }
+                }},
+                {"title":"项目角色"  ,"render" :function( data, type, full, meta){
+                    if ( ~~data == 3 )
+                    {
+                        return '<b><font color="green">'+"项目负责人"+"</font></b>"
+                    }
+                    if ( ~~data == 2 )
+                    {
+                        return '<b><font color="red">'+"项目秘书"+"</font></b>"
+                    }
+                    if ( ~~data == 1 )
+                    {
+                        return '<b><font>'+"一般成员"+"</font></b>"
+                    }
+                }},
+                ]
+		} );
+        
+   
+		$('#user tbody').on( 'click', 'button#delrow', function () {
+            var data = tables.row( $(this).parents('tr') ).data();
+			//alert(data)
+			$.ajax({
+                url: '/project/del/',
+                type: 'POST',
+                dataType: 'json',
+                data: {_id: data[0]},
+            })
+            .success( function()
+            {
+                self.location='/project/list/'
+            })
+            .done(function(data) {
+            })
+            .fail(function() {
+                alert("删除数据失败");
+            });
+        });
+	} 
+
+);
+
+
+
+</script>
+        <style >
+        .table_caption{
+            font-family:Georgia;
+            font-size: 25px;
+            text-align: left;
+        }
+        #user
+        {
+            background-color: #99FFFF;
+            margin-top:0%;
+        }
+        </style>
+</head> 
+
+<body> 
+<% include nav.ejs %>
+<br /><br />
+<p class="table_caption"></p>    
+<table id="user" class="display" width="100%" height="300px"></table>
+</br>
+</br>
+</br>
+
+</body>  
+</html>  

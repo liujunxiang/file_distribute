@@ -1,0 +1,976 @@
+2915:C 11 Oct 20:59:48.712 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+2915:M 11 Oct 20:59:48.718 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 2915
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+2915:M 11 Oct 20:59:48.722 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+2915:M 11 Oct 20:59:48.722 # Server started, Redis version 3.2.8
+2915:M 11 Oct 20:59:48.723 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+2915:M 11 Oct 20:59:48.725 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+2915:M 11 Oct 20:59:48.725 * The server is now ready to accept connections on port 6379
+2915:M 11 Oct 21:57:01.124 * DB saved on disk
+2915:M 11 Oct 22:57:02.095 * 1 changes in 3600 seconds. Saving...
+2915:M 11 Oct 22:57:02.096 * Background saving started by pid 5465
+5465:C 11 Oct 22:57:02.098 * DB saved on disk
+5465:C 11 Oct 22:57:02.099 * RDB: 0 MB of memory used by copy-on-write
+2915:M 11 Oct 22:57:02.196 * Background saving terminated with success
+2915:M 11 Oct 23:57:03.099 * 1 changes in 3600 seconds. Saving...
+2915:M 11 Oct 23:57:03.099 * Background saving started by pid 12053
+12053:C 11 Oct 23:57:03.102 * DB saved on disk
+12053:C 11 Oct 23:57:03.103 * RDB: 0 MB of memory used by copy-on-write
+2915:M 11 Oct 23:57:03.200 * Background saving terminated with success
+
+Running node-supervisor with
+  program './bin/www'
+  --watch '.'
+  --extensions 'node,js,/bin/www'
+  --exec 'node'
+
+Starting child process with 'node ./bin/www'
+Watching directory '/home/liujunxiang/sys' for changes.
+Press rs for restarting the process.
+Parent process exiting, terminating child...
+events.js:163
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+./start.sh: line 1: ﻿#!/bin/bash: No such file or directory
+[32m 启动一个新进程		 [0m[42;30m [OK] [0m
+server started,listen on port:80
+HTTPS Server is running on: https://localhost:443
+[32m 服务[TCP端口号:80	pid:1995]运行中....		 [0m[42;30m [OK] [0m
+[0mGET / [36m304 [0m32.343 ms - -[0m
+[0mGET /home/system.css [36m304 [0m13.397 ms - -[0m
+[0mGET /home/49.css [36m304 [0m3.373 ms - -[0m
+[0mGET /home/118.css [36m304 [0m2.701 ms - -[0m
+[0mGET /home/default.css [36m304 [0m2.578 ms - -[0m
+[0mGET /home/system(1).css [36m304 [0m1.342 ms - -[0m
+[0mGET /home/simplenews.css [36m304 [0m1.351 ms - -[0m
+[0mGET /home/sudyNav.css [36m304 [0m1.852 ms - -[0m
+[0mGET /home/datepicker.css [36m304 [0m1.231 ms - -[0m
+[0mGET /home/style.css [36m304 [0m1.954 ms - -[0m
+[0mGET /home/extends.css [36m304 [0m2.094 ms - -[0m
+[0mGET /css/login.css [36m304 [0m0.465 ms - -[0m
+[0mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD [36m304 [0m2.903 ms - -[0m
+[0mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD [36m304 [0m1.797 ms - -[0m
+[0mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD [36m304 [0m0.458 ms - -[0m
+[0mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD [36m304 [0m0.861 ms - -[0m
+[0mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD [36m304 [0m0.884 ms - -[0m
+Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+[0mGET /home/system_editor.css [31m500 [0m14.206 ms - 1656[0m
+[0mGET /home/extends.js.%E4%B8%8B%E8%BD%BD [36m304 [0m16.523 ms - -[0m
+[0mGET /home/jquery.sudy.js.%E4%B8%8B%E8%BD%BD [36m304 [0m14.556 ms - -[0m
+[0mGET /js/jquery-3.1.1.min.js [36m304 [0m14.475 ms - -[0m
+[0mGET /js/cookie-1.1.js [36m304 [0m14.380 ms - -[0m
+Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+[0mGET /home/.%E4%B8%8B%E8%BD%BDextends.css [31m500 [0m2.752 ms - 1656[0m
+Not Found
+[0mGET /home/.%E4%B8%8B%E8%BD%BDlibs/jquery.sudy.js [33m404 [0m1.740 ms - 1447[0m
+[0mGET /images/web_login_bg.jpg [36m304 [0m0.887 ms - -[0m
+[0mGET /images/aiwrap.png [36m304 [0m0.972 ms - -[0m
+Not Found
+[0mGET /favicon.ico [33m404 [0m2.092 ms - 1459[0m
+{"ulist":{"_id":"59e6ab6546c3de02afb95834","userid":"a","passwd":"a","type":1},"u_p_rel":[]}
+type_6c3a4d7697744bf1bace8e3bbb412d0d ==> 01000
+[0mPOST /login [32m200 [0m86.484 ms - -[0m
+[0mGET /home/ [32m200 [0m50.113 ms - 8632[0m
+[0mGET /me/bootstrap.min.css [36m304 [0m3.271 ms - -[0m
+[0mGET /me/jquery.min.js [36m304 [0m3.333 ms - -[0m
+[0mGET /js/cookie-1.1.js [36m304 [0m3.052 ms - -[0m
+[0mGET /me/bootstrap.min.js [36m304 [0m2.905 ms - -[0m
+{ userid: 'a' }
+[0mGET /home/59e6b7e22562d7150e1adde4/ [32m200 [0m24.127 ms - 7040[0m
+[0mGET /me/bootstrap.min.css [36m304 [0m1.819 ms - -[0m
+[0mGET /me/jquery.min.js [36m304 [0m1.799 ms - -[0m
+[0mGET /me/bootstrap.min.js [36m304 [0m1.860 ms - -[0m
+[0mGET /js/cookie-1.1.js [36m304 [0m1.951 ms - -[0m
+[0mGET /home/ [36m304 [0m36.173 ms - -[0m
+[0mGET /me/bootstrap.min.css [36m304 [0m5.037 ms - -[0m
+[0mGET /me/jquery.min.js [36m304 [0m4.067 ms - -[0m
+[0mGET /me/bootstrap.min.js [36m304 [0m4.140 ms - -[0m
+[0mGET /js/cookie-1.1.js [36m304 [0m4.622 ms - -[0m
+[32m 服务[TCP端口号:80	pid:1995]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:80	pid:1995]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:80	pid:1995]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:80	pid:1995]运行中....		 [0m[42;30m [OK] [0m
+[32m 启动一个新进程		 [0m[42;30m [OK] [0m
+server started,listen on port:81
+HTTPS Server is running on: https://localhost:444
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 10:40:18.954] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:40:19.023] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 10:40:19.029] [INFO] app.js - [39mGET /home/118.css 
+[32m[2017-10-19 10:40:19.032] [INFO] app.js - [39mGET /home/system(1).css 
+[32m[2017-10-19 10:40:19.036] [INFO] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:40:19.038] [INFO] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:40:19.041] [INFO] app.js - [39mGET /home/simplenews.css 
+[32m[2017-10-19 10:40:19.051] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 10:40:19.052] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:40:19.053] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:40:19.056] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:40:19.060] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:40:19.062] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:40:19.069] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:40:19.073] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:40:19.077] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:40:19.078] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:40:19.330] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[32m[2017-10-19 10:40:19.335] [INFO] app.js - [39mGET /images/aiwrap.png 
+[33m[2017-10-19 10:40:20.026] [WARN] app.js - [39mGET / 
+[33m[2017-10-19 10:40:20.044] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:40:20.047] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:40:20.048] [WARN] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:40:20.050] [WARN] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:40:20.053] [WARN] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 10:40:20.056] [WARN] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:40:20.058] [WARN] app.js - [39mGET /home/datepicker.css 
+[33m[2017-10-19 10:40:20.063] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 10:40:20.064] [WARN] app.js - [39mGET /css/login.css 
+[33m[2017-10-19 10:40:20.066] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.069] [WARN] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.070] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.076] [WARN] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.077] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.079] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[33m[2017-10-19 10:40:20.080] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 10:40:20.182] [WARN] app.js - [39mGET / 
+[33m[2017-10-19 10:40:20.193] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:40:20.197] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:40:20.198] [WARN] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:40:20.200] [WARN] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:40:20.201] [WARN] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 10:40:20.209] [WARN] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:40:20.212] [WARN] app.js - [39mGET /home/datepicker.css 
+[33m[2017-10-19 10:40:20.213] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 10:40:20.217] [WARN] app.js - [39mGET /css/login.css 
+[33m[2017-10-19 10:40:20.218] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.220] [WARN] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.226] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.227] [WARN] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.228] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.230] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[33m[2017-10-19 10:40:20.231] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 10:40:20.376] [WARN] app.js - [39mGET / 
+[33m[2017-10-19 10:40:20.401] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:40:20.403] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:40:20.408] [WARN] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:40:20.409] [WARN] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:40:20.411] [WARN] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 10:40:20.413] [WARN] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:40:20.415] [WARN] app.js - [39mGET /home/datepicker.css 
+[33m[2017-10-19 10:40:20.418] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 10:40:20.420] [WARN] app.js - [39mGET /css/login.css 
+[33m[2017-10-19 10:40:20.424] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.425] [WARN] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.429] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.431] [WARN] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.433] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.433] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[33m[2017-10-19 10:40:20.434] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 10:40:20.518] [WARN] app.js - [39mGET / 
+[33m[2017-10-19 10:40:20.528] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:40:20.530] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:40:20.531] [WARN] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:40:20.533] [WARN] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:40:20.534] [WARN] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 10:40:20.535] [WARN] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:40:20.537] [WARN] app.js - [39mGET /home/datepicker.css 
+[33m[2017-10-19 10:40:20.538] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 10:40:20.538] [WARN] app.js - [39mGET /css/login.css 
+[33m[2017-10-19 10:40:20.541] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.542] [WARN] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.543] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.545] [WARN] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.546] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:40:20.547] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[33m[2017-10-19 10:40:20.548] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+{"ulist":{"_id":"59e6ab6546c3de02afb95834","userid":"a","passwd":"a","type":1},"u_p_rel":[]}
+type_51d80fb3590a455aa3b3616f335fb0df ==> 01000
+[32m[2017-10-19 10:40:22.572] [INFO] app.js - [39mPOST /login 
+[33m[2017-10-19 10:40:22.641] [WARN] app.js - [39mGET /home/ 
+[33m[2017-10-19 10:40:22.662] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:40:22.665] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 10:40:22.666] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 10:40:22.694] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 10:53:55.915] [WARN] app.js - [39mGET / 
+[33m[2017-10-19 10:53:55.927] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:53:55.931] [WARN] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:53:55.932] [WARN] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:53:55.933] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:53:55.937] [WARN] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 10:53:55.940] [WARN] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:53:55.944] [WARN] app.js - [39mGET /home/datepicker.css 
+[33m[2017-10-19 10:53:55.945] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 10:53:55.945] [WARN] app.js - [39mGET /css/login.css 
+[33m[2017-10-19 10:53:55.946] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:53:55.947] [WARN] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:53:55.950] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:53:55.955] [WARN] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:53:55.956] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:53:55.957] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[33m[2017-10-19 10:53:55.957] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 10:53:55.981] [WARN] app.js - [39mGET /images/web_login_bg.jpg 
+[33m[2017-10-19 10:53:55.996] [WARN] app.js - [39mGET /images/aiwrap.png 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m[2017-10-19 10:58:33.689] [INFO] app.js - [39mGET / 
+[33m[2017-10-19 10:58:33.726] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:58:33.731] [WARN] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:58:33.732] [WARN] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:58:33.738] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 10:58:33.739] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:58:33.748] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:58:33.755] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:58:33.759] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 10:58:33.830] [WARN] app.js - [39mGET /images/aiwrap.png 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 10:58:38.662] [WARN] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:58:38.666] [WARN] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:58:38.668] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 10:58:38.673] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 10:58:38.675] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:58:38.676] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:58:38.686] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:58:38.687] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:58:38.718] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[33m[2017-10-19 10:58:39.166] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:58:39.190] [INFO] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:58:39.191] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:58:39.192] [WARN] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:58:39.198] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:58:39.206] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:58:39.210] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:58:39.217] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:58:39.221] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:58:39.259] [INFO] app.js - [39mGET /images/aiwrap.png 
+[33m[2017-10-19 10:58:39.422] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:58:39.425] [WARN] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:58:39.428] [WARN] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:58:39.430] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:58:39.431] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 10:58:39.433] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:58:39.437] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:58:39.442] [WARN] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:58:39.468] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+{"ulist":{"_id":"59e6ab6546c3de02afb95834","userid":"a","passwd":"a","type":1},"u_p_rel":[]}
+type_a00697ee02e04a1dac02e8e4acb6855e ==> 01000
+[32m[2017-10-19 10:58:41.808] [INFO] app.js - [39mPOST /login 
+[32m[2017-10-19 10:58:41.939] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 10:58:41.940] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 10:58:45.033] [WARN] app.js - [39mGET /visit 
+[33m[2017-10-19 10:58:45.072] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 10:58:45.074] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 10:59:35.378] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:59:35.391] [INFO] app.js - [39mGET /home/118.css 
+[32m[2017-10-19 10:59:35.395] [INFO] app.js - [39mGET /home/default.css 
+[33m[2017-10-19 10:59:35.397] [WARN] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:59:35.400] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:35.406] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:35.409] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:35.423] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:59:35.433] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:59:35.478] [INFO] app.js - [39mGET /images/aiwrap.png 
+[32m[2017-10-19 10:59:44.335] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 10:59:44.341] [INFO] app.js - [39mGET /home/system(1).css 
+[33m[2017-10-19 10:59:44.342] [WARN] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:44.344] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 10:59:44.346] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:59:44.353] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:44.354] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:44.360] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:59:44.392] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[33m[2017-10-19 10:59:45.783] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:59:45.804] [INFO] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 10:59:45.805] [WARN] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:45.811] [INFO] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:59:45.815] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:45.818] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:45.820] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:45.826] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:45.832] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:59:45.879] [INFO] app.js - [39mGET /images/aiwrap.png 
+[32m[2017-10-19 10:59:46.443] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 10:59:46.446] [INFO] app.js - [39mGET /home/system(1).css 
+[32m[2017-10-19 10:59:46.451] [INFO] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 10:59:46.455] [WARN] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:46.457] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:59:46.463] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:46.468] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:46.472] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:59:46.494] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[33m[2017-10-19 10:59:47.040] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:59:47.073] [INFO] app.js - [39mGET /home/118.css 
+[32m[2017-10-19 10:59:47.074] [INFO] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:47.078] [INFO] app.js - [39mGET /home/sudyNav.css 
+[33m[2017-10-19 10:59:47.080] [WARN] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:47.086] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:47.089] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:47.091] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:47.097] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:59:47.147] [INFO] app.js - [39mGET /images/aiwrap.png 
+[32m[2017-10-19 10:59:47.698] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 10:59:47.710] [INFO] app.js - [39mGET /home/system(1).css 
+[32m[2017-10-19 10:59:47.712] [INFO] app.js - [39mGET /home/simplenews.css 
+[32m[2017-10-19 10:59:47.714] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 10:59:47.717] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:59:47.720] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:47.725] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:47.728] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:59:47.751] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[33m[2017-10-19 10:59:48.209] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:59:48.228] [INFO] app.js - [39mGET /home/118.css 
+[32m[2017-10-19 10:59:48.229] [INFO] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:48.230] [INFO] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:59:48.234] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:48.239] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:48.242] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:48.247] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:48.257] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:59:48.298] [INFO] app.js - [39mGET /images/aiwrap.png 
+[32m[2017-10-19 10:59:49.029] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 10:59:49.031] [INFO] app.js - [39mGET /home/system(1).css 
+[32m[2017-10-19 10:59:49.034] [INFO] app.js - [39mGET /home/simplenews.css 
+[32m[2017-10-19 10:59:49.038] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 10:59:49.046] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 10:59:49.052] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.059] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.079] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 10:59:49.116] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[33m[2017-10-19 10:59:49.471] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 10:59:49.484] [INFO] app.js - [39mGET /home/118.css 
+[32m[2017-10-19 10:59:49.486] [INFO] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:49.491] [INFO] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:59:49.493] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:49.496] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.502] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.515] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.518] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:59:49.559] [INFO] app.js - [39mGET /images/aiwrap.png 
+[32m[2017-10-19 10:59:49.966] [INFO] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:59:49.969] [WARN] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:49.971] [INFO] app.js - [39mGET /home/simplenews.css 
+[32m[2017-10-19 10:59:49.982] [INFO] app.js - [39mGET /home/datepicker.css 
+[33m[2017-10-19 10:59:49.984] [WARN] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:49.988] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.995] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:49.999] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[33m[2017-10-19 10:59:50.482] [WARN] app.js - [39mGET / 
+[33m[2017-10-19 10:59:50.502] [WARN] app.js - [39mGET /home/49.css 
+[33m[2017-10-19 10:59:50.511] [WARN] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 10:59:50.512] [INFO] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 10:59:50.515] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 10:59:50.524] [WARN] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 10:59:50.529] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:50.536] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 10:59:50.538] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 10:59:52.784] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 10:59:52.806] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 10:59:52.808] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 11:00:03.607] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 11:00:03.608] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+{ userid: 'a' }
+[33m[2017-10-19 11:00:04.376] [WARN] app.js - [39mGET /home/59e6ab4546c3de02afb95832/ 
+[32m[2017-10-19 11:00:04.394] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 11:00:04.396] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+{ userid: 'a' }
+[33m[2017-10-19 11:00:09.109] [WARN] app.js - [39mGET /home/59e6ab4546c3de02afb95832/ 
+[33m[2017-10-19 11:00:09.125] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 11:00:09.126] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+{ userid: 'a' }
+[32m[2017-10-19 11:00:15.155] [INFO] app.js - [39mGET /home/59e6b1b66c6084073fd84c7e/ 
+[33m[2017-10-19 11:00:15.186] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 11:00:15.188] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 11:00:20.577] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 11:00:20.578] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+Not Found
+[31m[2017-10-19 11:31:46.772] [ERROR] app.js - [39mGET /login 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 13:12:25.034] [WARN] app.js - [39mGET / 
+[32m[2017-10-19 13:12:25.048] [INFO] app.js - [39mGET /home/118.css 
+[33m[2017-10-19 13:12:25.050] [WARN] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 13:12:25.054] [INFO] app.js - [39mGET /home/simplenews.css 
+[33m[2017-10-19 13:12:25.055] [WARN] app.js - [39mGET /home/style.css 
+[33m[2017-10-19 13:12:25.064] [WARN] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 13:12:25.066] [WARN] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[33m[2017-10-19 13:12:25.068] [WARN] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 13:12:25.074] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 13:12:25.122] [WARN] app.js - [39mGET /images/aiwrap.png 
+[32m[2017-10-19 13:12:32.083] [INFO] app.js - [39mGET / 
+[32m[2017-10-19 13:12:32.093] [INFO] app.js - [39mGET /home/49.css 
+[32m[2017-10-19 13:12:32.103] [INFO] app.js - [39mGET /home/118.css 
+[32m[2017-10-19 13:12:32.118] [INFO] app.js - [39mGET /home/style.css 
+[32m[2017-10-19 13:12:32.135] [INFO] app.js - [39mGET /home/datepicker.css 
+[32m[2017-10-19 13:12:32.136] [INFO] app.js - [39mGET /css/login.css 
+[32m[2017-10-19 13:12:32.139] [INFO] app.js - [39mGET /home/system(1).css 
+[32m[2017-10-19 13:12:32.141] [INFO] app.js - [39mGET /home/default.css 
+[32m[2017-10-19 13:12:32.143] [INFO] app.js - [39mGET /home/simplenews.css 
+[32m[2017-10-19 13:12:32.144] [INFO] app.js - [39mGET /home/sudyNav.css 
+[32m[2017-10-19 13:12:32.152] [INFO] app.js - [39mGET /home/jquery.sudy.wp.visitcount.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 13:12:32.155] [INFO] app.js - [39mGET /home/jquery.sudyNav.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 13:12:32.157] [INFO] app.js - [39mGET /home/jquery.min.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 13:12:32.162] [INFO] app.js - [39mGET /home/jquery.datepicker.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 13:12:32.163] [INFO] app.js - [39mGET /home/datepicker_lang_HK.js.%E4%B8%8B%E8%BD%BD 
+[32m[2017-10-19 13:12:32.168] [INFO] app.js - [39mGET /js/jquery-3.1.1.min.js 
+[32m[2017-10-19 13:12:32.170] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:12:32.198] [INFO] app.js - [39mGET /images/web_login_bg.jpg 
+[32m[2017-10-19 13:12:32.220] [INFO] app.js - [39mGET /images/aiwrap.png 
+Not Found
+[31m[2017-10-19 13:12:32.298] [ERROR] app.js - [39mGET /favicon.ico 
+{"ulist":{"_id":"59e6ab6546c3de02afb95834","userid":"a","passwd":"a","type":1},"u_p_rel":[]}
+type_c7c24b6db3cf4f65aaa444124097b03d ==> 01000
+[32m[2017-10-19 13:12:35.739] [INFO] app.js - [39mPOST /login 
+[33m[2017-10-19 13:12:35.759] [WARN] app.js - [39mGET /home 
+[32m[2017-10-19 13:12:35.781] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:12:35.805] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:12:35.808] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:12:35.810] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:12:35.813] [INFO] app.js - [39mGET /me/jquery.min.js 
+(node:15577) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 reconnect listeners added. Use emitter.setMaxListeners() to increase limit
+(node:15577) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 reconnectFailed listeners added. Use emitter.setMaxListeners() to increase limit
+(node:15577) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 attemptReconnect listeners added. Use emitter.setMaxListeners() to increase limit
+(node:15577) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 monitoring listeners added. Use emitter.setMaxListeners() to increase limit
+[32m[2017-10-19 13:12:51.045] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:12:51.078] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:12:51.078] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:12:51.080] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:12:51.081] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:12:51.537] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:12:51.560] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:12:51.562] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:12:51.567] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:12:51.570] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:12:51.952] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:12:51.969] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:12:51.969] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:12:51.970] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:12:51.972] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:12:52.166] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:12:52.182] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:12:52.182] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:12:52.183] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:12:52.185] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:12:52.441] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:12:52.454] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 13:12:52.457] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:12:52.458] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:12:52.458] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m[2017-10-19 13:13:59.177] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:13:59.201] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:13:59.204] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:14:00.412] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:00.414] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:00.780] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:00.807] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:00.810] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 13:14:01.190] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:14:01.191] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:01.700] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:14:01.719] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:14:01.720] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:01.955] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:01.959] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:02.127] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:02.147] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:02.148] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:02.376] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:02.377] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:02.565] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:02.579] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:02.580] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:02.810] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:02.812] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+{ userid: 'a' }
+[32m[2017-10-19 13:14:04.032] [INFO] app.js - [39mGET /home/59e6ab4546c3de02afb95832/ 
+[32m[2017-10-19 13:14:04.050] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:04.051] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:05.720] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:23.834] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:14:23.857] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:14:23.858] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:24.433] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:24.435] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:25.565] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:25.582] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:25.583] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:25.857] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:25.858] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:26.032] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:26.048] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:26.049] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:26.250] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:26.252] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:26.450] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:14:26.471] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:26.475] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 13:14:26.702] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:26.704] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:26.911] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:26.930] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:26.931] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:28.996] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:29.000] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:29.229] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:29.252] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:29.257] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:29.507] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:29.508] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:29.710] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:29.730] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:29.731] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:29.927] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:29.929] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:30.090] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:30.110] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:30.111] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:14:30.287] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:14:30.289] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:14:30.426] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:14:30.451] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:14:30.452] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 13:17:22.010] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:17:22.030] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:17:22.724] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:17:22.741] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:17:22.743] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:17:23.055] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:17:23.063] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:17:23.247] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:17:23.261] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:17:23.261] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 13:17:23.987] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:17:23.988] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:17:23.995] [INFO] app.js - [39mGET /1.jpg 
+[32m[2017-10-19 13:17:27.368] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:17:27.370] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[ 0, 1, 0, 0, 0 ]
+{"title":"项目2-admin-锁有人","desc":"","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","type":0,"size":285184,"status":0,"userid":"a","expire":1,"_id":"59e8357d2a7c7e3cd9ab04be"}
+[32m[2017-10-19 13:17:49.557] [INFO] app.js - [39mPOST /file/upload/ 
+[32m[2017-10-19 13:17:49.600] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:17:49.604] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:17:49.610] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[33m[2017-10-19 13:17:49.636] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:17:49.748] [INFO] app.js - [39mGET /images/sort_both.png 
+[32m[2017-10-19 13:17:51.815] [INFO] app.js - [39mGET /file/check/ 
+[33m[2017-10-19 13:17:51.833] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:17:51.837] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:17:51.838] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[33m[2017-10-19 13:17:51.852] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:17:51.947] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:17:55.243] [INFO] app.js - [39mGET /file/check/ 
+[33m[2017-10-19 13:17:55.264] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:17:55.264] [WARN] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[33m[2017-10-19 13:17:55.265] [WARN] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[33m[2017-10-19 13:17:55.269] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 13:17:55.359] [WARN] app.js - [39mGET /images/sort_asc.png 
+[33m[2017-10-19 13:17:56.835] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:17:56.840] [WARN] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:17:56.843] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:17:56.845] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:17:56.919] [INFO] app.js - [39mGET /images/sort_both.png 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:33:24.666] [INFO] app.js - [39mGET /file/visit/1/ 
+[32m[2017-10-19 13:33:24.700] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:24.711] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:24.731] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:24.732] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:24.822] [INFO] app.js - [39mGET /images/sort_asc.png 
+[33m[2017-10-19 13:33:24.931] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 13:33:24.935] [WARN] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:24.938] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:33:24.940] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:24.997] [INFO] app.js - [39mGET /images/sort_both.png 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:33:25.162] [INFO] app.js - [39mGET /file/visit/1/ 
+[32m[2017-10-19 13:33:25.183] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:33:25.186] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:25.187] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:33:25.225] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:25.313] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:33:25.805] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:25.807] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:33:25.809] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:25.831] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:25.920] [INFO] app.js - [39mGET /images/sort_both.png 
+[33m[2017-10-19 13:33:26.560] [WARN] app.js - [39mGET /home 
+[33m[2017-10-19 13:33:26.596] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 13:33:26.599] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:33:27.254] [WARN] app.js - [39mGET /home 
+[33m[2017-10-19 13:33:27.285] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 13:33:27.286] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:33:27.905] [INFO] app.js - [39mGET /file/visit/1/ 
+[32m[2017-10-19 13:33:27.927] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:27.930] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:27.932] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:33:27.944] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:28.046] [INFO] app.js - [39mGET /images/sort_asc.png 
+[33m[2017-10-19 13:33:28.300] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:28.304] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:33:28.306] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:28.308] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:28.407] [INFO] app.js - [39mGET /images/sort_both.png 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:33:28.930] [INFO] app.js - [39mGET /file/visit/1/ 
+[33m[2017-10-19 13:33:28.950] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:33:28.952] [WARN] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:28.957] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:28.958] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:29.055] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:33:29.452] [INFO] app.js - [39mGET /home/ 
+[32m[2017-10-19 13:33:29.474] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[33m[2017-10-19 13:33:29.476] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[33m[2017-10-19 13:33:30.196] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:30.201] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:33:30.202] [WARN] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:30.204] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:30.261] [INFO] app.js - [39mGET /images/sort_both.png 
+[32m[2017-10-19 13:33:31.214] [INFO] app.js - [39mGET /file/check/ 
+[33m[2017-10-19 13:33:31.231] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:33:31.233] [WARN] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:31.235] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:31.238] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:31.306] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:33:33.126] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:33:33.128] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:33.131] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:33:33.132] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:33.245] [INFO] app.js - [39mGET /images/sort_both.png 
+[32m[2017-10-19 13:33:34.153] [INFO] app.js - [39mGET /file/check/ 
+[33m[2017-10-19 13:33:34.173] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:33:34.176] [WARN] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:33:34.177] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:34.187] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:34.230] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:33:34.708] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:34.711] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:33:34.712] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:34.728] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:34.822] [INFO] app.js - [39mGET /images/sort_both.png 
+[33m[2017-10-19 13:33:35.319] [WARN] app.js - [39mGET /home 
+[32m[2017-10-19 13:33:35.347] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:35.348] [INFO] app.js - [39mGET /me/jquery.min.js 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:33:36.236] [INFO] app.js - [39mGET /file/visit/1/ 
+[33m[2017-10-19 13:33:36.254] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:33:36.258] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[33m[2017-10-19 13:33:36.261] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:36.264] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:33:36.365] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:33:37.492] [INFO] app.js - [39mGET /home/ 
+[33m[2017-10-19 13:33:37.510] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:33:37.512] [WARN] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:38.164] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:33:38.170] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:33:38.173] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:33:38.189] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:33:38.297] [INFO] app.js - [39mGET /images/sort_both.png 
+[33m[2017-10-19 13:33:39.132] [WARN] app.js - [39mGET /home 
+[32m[2017-10-19 13:33:39.171] [INFO] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:33:39.171] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:33:41.009] [INFO] app.js - [39mGET /file/visit/1/ 
+[33m[2017-10-19 13:33:41.029] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:33:41.038] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:33:41.043] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:33:41.044] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:33:41.147] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[33m[2017-10-19 13:37:45.127] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:37:45.150] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:37:45.155] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:37:45.164] [WARN] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:37:45.251] [INFO] app.js - [39mGET /images/sort_both.png 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:37:47.908] [INFO] app.js - [39mGET /file/visit/1/ 
+[33m[2017-10-19 13:37:47.921] [WARN] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:37:47.925] [WARN] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:37:47.932] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:37:47.933] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:37:48.003] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:37:49.118] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:37:49.121] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:37:49.121] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:37:49.138] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:37:49.236] [INFO] app.js - [39mGET /images/sort_both.png 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:37:49.450] [INFO] app.js - [39mGET /file/visit/1/ 
+[32m[2017-10-19 13:37:49.467] [INFO] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:37:49.473] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:37:49.474] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:37:49.498] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:37:49.604] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:37:49.757] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:37:49.758] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:37:49.759] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:37:49.775] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:37:49.873] [INFO] app.js - [39mGET /images/sort_both.png 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:37:50.131] [INFO] app.js - [39mGET /file/visit/1/ 
+[33m[2017-10-19 13:37:50.150] [WARN] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:37:50.151] [WARN] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:37:50.153] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:37:50.164] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:37:50.220] [INFO] app.js - [39mGET /images/sort_asc.png 
+[32m[2017-10-19 13:37:55.913] [INFO] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:37:55.914] [WARN] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:37:55.916] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:37:55.933] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:37:56.036] [INFO] app.js - [39mGET /images/sort_both.png 
+[33m[2017-10-19 13:37:57.220] [WARN] app.js - [39mGET /home 
+[32m[2017-10-19 13:37:57.264] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:37:57.265] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+{"data":[{"title":"项目1-1-所有人","filename":"FT[通用]ZD（技术）313-01 专利申报申请表.docx","encode_filename":"resource/upload_eabd915eebb16bf60ed9e9a2d4f04f54.docx","date":"2017-10-18 09:31:37","userid":"c"},{"title":"项目2-1-所有人","filename":"FT[通用]ZD（研发）313-03____专利申请技.docx","encode_filename":"resource/upload_ef1a831dcfdc2187fb6379db1faaa0de.docx","date":"2017-10-18 09:39:37","userid":"e"},{"title":"项目2-admin-所有人","filename":"HL-D0010-01 软件设计说明书-灶具.doc","encode_filename":"resource/upload_4e9ca1b4aca0b35f60943bd1f0ce0536.doc","date":"2017-10-18 09:46:37","userid":"admin"},{"title":"项目2-admin-锁有人","filename":"HL-D0010-01 软件设计说明书(1).doc","encode_filename":"resource/upload_4480a1f8748c197e0fddd55b8de9edbd.doc","date":"2017-10-19 13:17:49","userid":"a"}],"type":[0,1,0,0,0],"user":"a"}
+[32m[2017-10-19 13:37:57.897] [INFO] app.js - [39mGET /file/visit/1/ 
+[32m[2017-10-19 13:37:57.912] [INFO] app.js - [39mGET /me/jquery.min.js 
+[33m[2017-10-19 13:37:57.913] [WARN] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:37:57.916] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:37:57.930] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:37:57.993] [INFO] app.js - [39mGET /images/sort_asc.png 
+[33m[2017-10-19 13:37:58.626] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:37:58.631] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:37:58.637] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[32m[2017-10-19 13:37:58.640] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:37:58.735] [INFO] app.js - [39mGET /images/sort_both.png 
+[32m[2017-10-19 13:38:00.372] [INFO] app.js - [39mGET /file/list/ 
+[33m[2017-10-19 13:38:00.391] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:38:00.399] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.js 
+[32m[2017-10-19 13:38:00.401] [INFO] app.js - [39mGET /js/cookie-1.1.js 
+[32m[2017-10-19 13:38:00.401] [INFO] app.js - [39mGET /bootstrap/jquery-1.12.4.js 
+[32m[2017-10-19 13:38:00.507] [INFO] app.js - [39mGET /images/sort_asc.png 
+[33m[2017-10-19 13:38:01.969] [WARN] app.js - [39mGET /me/jquery.min.js 
+[32m[2017-10-19 13:38:01.975] [INFO] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:38:01.975] [INFO] app.js - [39mGET /bootstrap/com.js 
+[32m[2017-10-19 13:38:01.977] [INFO] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[32m[2017-10-19 13:38:02.083] [INFO] app.js - [39mGET /images/sort_both.png 
+[33m[2017-10-19 13:38:03.119] [WARN] app.js - [39mGET /me/bootstrap.min.css 
+[32m[2017-10-19 13:38:03.125] [INFO] app.js - [39mGET /me/bootstrap.min.js 
+[33m[2017-10-19 13:38:03.128] [WARN] app.js - [39mGET /bootstrap/com.js 
+[33m[2017-10-19 13:38:03.135] [WARN] app.js - [39mGET /bootstrap/jquery.dataTables.min.css 
+[33m[2017-10-19 13:38:03.173] [WARN] app.js - [39mGET /images/sort_both.png 
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m
+[32m 服务[TCP端口号:81	pid:15577]运行中....		 [0m[42;30m [OK] [0m

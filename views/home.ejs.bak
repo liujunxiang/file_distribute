@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<html>
+<head lang="zh-CN"> 
+<% include style.ejs %>
+</head>
+<body>
+<% include header.ejs %>
+<div class="wrapper" id="container">
+  <div class="inner">
+    <div class="mod clearfix">
+      <div class="mod_top">
+        <div class="mod_top_1" frag="面板31">
+          <div frag="窗口31">
+          <!-- JSON列表 -->
+<script language="JavaScript" class="">
+    var w31imgJsons = [
+    
+        
+            {
+            "src": "/_upload/article/images/ed/fa/033c2ff646d185901d47b99f1582/16b1ccff-b98a-44e9-9538-9d298bb78ed1_s.jpg",
+            "original": "/_upload/article/images/ed/fa/033c2ff646d185901d47b99f1582/16b1ccff-b98a-44e9-9538-9d298bb78ed1.jpg",
+            "title": "我系学生荣获第一届“龙芯杯”全国大学生计算机系统能...",
+            "url": "/53/02/c1654a217858/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/9b/9f/0bb648ef4bbcbb4170d84221423f/19efb30e-4e33-43ba-ac3f-7a40f8ba4ac1_s.jpg",
+            "original": "/_upload/article/images/9b/9f/0bb648ef4bbcbb4170d84221423f/19efb30e-4e33-43ba-ac3f-7a40f8ba4ac1.jpg",
+            "title": "我系团队夺得腾讯社交广告高校算法大赛冠军，赢得30...",
+            "url": "/31/60/c1654a209248/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/5d/cc/753ee28f46b5a5d843cb41094cd4/9d86cea7-49e1-42c4-b32d-6adde7e68de2_s.jpg",
+            "original": "/_upload/article/images/5d/cc/753ee28f46b5a5d843cb41094cd4/9d86cea7-49e1-42c4-b32d-6adde7e68de2.jpg",
+            "title": "我系团队分别荣获&nbsp;2017&nbsp;年第四届全国高校物联网...",
+            "url": "/0a/51/c1654a199249/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/18/18/4fd6933b410e9fb1f07d96c05095/30a27658-7489-4bb3-9ef0-89ab9225491c_s.jpg",
+            "original": "/_upload/article/images/18/18/4fd6933b410e9fb1f07d96c05095/30a27658-7489-4bb3-9ef0-89ab9225491c.jpg",
+            "title": "PASA大数据实验室荣获2017年全国高校计算应用...",
+            "url": "/e8/b4/c1654a190644/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/2c/73/fdbda9f14980b7db14801066b961/f38de453-1942-4441-8d4b-9b551afe4e21_s.jpg",
+            "original": "/_upload/article/images/2c/73/fdbda9f14980b7db14801066b961/f38de453-1942-4441-8d4b-9b551afe4e21.jpg",
+            "title": "南京大学孙钟秀教育基金设立倡议书",
+            "url": "/9b/6e/c1654a170862/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/17/1e/4046887647f6b7c6ecac873949f1/c7ea7db0-5c73-4ef5-aafa-af51c6abe409_s.jpg",
+            "original": "/_upload/article/images/17/1e/4046887647f6b7c6ecac873949f1/c7ea7db0-5c73-4ef5-aafa-af51c6abe409.jpg",
+            "title": "我系PASA大数据实验室团队蝉联“全国高校云计算应...",
+            "url": "/27/a7/c1654a141223/page.htm"
+            }
+        
+    
+    ];
+</script>
+        <div class="mod_top_2">
+          <div class="top_3">
+            <div class="cbox" frag="面板32">
+            <div class="post post1" frag="窗口32">
+              <div class="subnav clearfix">
+                <h3 class="title"><span frag="标题">最新动态</span></h3>
+                <div class="con-more">
+                  <div class="more-btn" frag="按钮" type="更多"><a href="https://cs.nju.edu.cn/1654/list.htm" class="w32_more"><span class="more-text" frag="按钮内容">更多&gt;&gt;</span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="top_4">
+            <div class="cbox" frag="面板33">
+            <div class="post post1" frag="窗口33">
+              <div class="con">
+                <div id="wp_news_w33"> 
+ 
+<ul class="wp_article_list">  
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class="Article_Index">2</span> 
+             <span class="Article_Title"><a href="https://cs.nju.edu.cn/53/02/c1654a217858/page.htm" target="_blank" title="我系学生荣获第一届“龙芯杯”全国大学生计算机系统能力培养大赛 二等奖和三等奖">我系学生荣获第一届“龙芯杯”全国大学生计算机系统能力培养...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+             <span class="Article_PublishDate">2017-09-28</span>   
+         </div> 
+     </li> 
+      
+     <li class="list_item i3"> 
+         <div class="fields pr_fields"> 
+             <span class="Article_Index">3</span> 
+             <span class="Article_Title"><a href="https://cs.nju.edu.cn/31/60/c1654a209248/page.htm" target="_blank" title="我系团队夺得腾讯社交广告高校算法大赛冠军，赢得30 万奖金">我系团队夺得腾讯社交广告高校算法大赛冠军，赢得30 万奖金</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class="Article_PublishDate">2017-07-10</span> 
+              
+         </div> 
+     </li>    
+</ul> 
+</div> 
+
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="mod_bot">
+        <div class="mod_bot_1">
+          <div class="bot_1">
+            <div class="cbox" frag="面板34">
+            <div class="post post1" frag="窗口34">
+              <div class="subnav clearfix">
+                <h3 class="title"><span frag="标题" title="研究团队">            资料展示</span></h3>
+                <div class="con-more">
+                  <div class="more-btn" frag="按钮" type="更多"><a href="https://cs.nju.edu.cn/c7/de/c1656a51166/page.htm" class="w34_more"><span class="more-text" frag="按钮内容">更多&gt;&gt;</span></a></div>
+                </div>
+              </div>
+              <div class="con">
+                <div id="wp_news_w34"> 
+ 
+<ul class="wp_article_list"> 
+      
+     <li class="list_item i1"> 
+         <div class="fields pr_fields"> 
+             <span class="Article_Index">1</span> 
+             <span class="Article_Title"><a href="http://moon.nju.edu.cn/" target="_blank" title="计算机软件研究所">计算机软件研究所</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class="Article_Index">2</span> 
+             <span class="Article_Title"><a href="http://lamda.nju.edu.cn/CH.MainPage.ashx" target="_blank" title="机器学习与数据挖掘研究所">机器学习与数据挖掘研究所</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+         </div> 
+     </li> 
+      
+</ul> 
+</div> 
+
+              </div>
+            </div><div frag="窗口1"> 
+      
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <% include footer.ejs %>
+ </body>
+ </html>

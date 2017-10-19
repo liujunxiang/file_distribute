@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Markdown</title>
+    <% include nav_type.ejs %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+     <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+ <style>
+    #blog-publish{
+        margin-left:92.5% ;  
+        
+    }
+    #msg_for_title{
+    float:left ;
+    border:none;
+    height:50px;
+    margin-left:10px;
+ }
+ </style>
+<script>
+ function f()
+ {
+    var obj = new Object();
+    obj.text=$("#text-input").val()
+    if( obj.text == null  || obj.text=='') { obj.text="空" }
+    obj.title=$("#msg_for_title").val()
+    if( obj.title == null  || obj.title=='') { 
+    obj.title="TEST" }
+    $.ajax({
+    url:  "/markdown/", 
+    data:JSON.stringify(obj), 
+    contentType: "application/json; charset=utf-8",
+    dataType:'json', 
+    type:'post', 
+    async: false,
+    success : function ( data) 
+    {
+        window.location.href='/home'
+    }
+    });
+ }
+ 
+onload = function ()
+{
+    var txt = document.querySelector ("input[type=text]");
+    txt.onfocus = function ()
+    {
+        this.place = this.value;
+        this.value = "";
+    };
+     
+    txt.onblur = function ()
+    {
+        this.value = this.place;
+    }
+}
+</script>
+</head>
+<body style="padding:0px;background:#FFFFFF;">
+<% include nav.ejs %>
+<br/><br/><br/>
+<input type="text" id="msg_for_title" value="在此输入标题 !!!" ></input>
+<div id="blog-publish" >
+<a  onclick="f()" class="btn btn-danger btn-lg btn-blog-publish" data-original-title="" title="">发表公告</a>
+</div>
+<br/>
+<textarea id="text-input" oninput="this.editer.update()" style="width:50%;height:100%; background:#CBEFD9;font-size:22px;">
+</textarea>
+<div id="preview" style="float:right;width:50%;height:100%; border:0.5px solid #315;background:#FFFFFF;"></div>
+<script src='javascripts/markdown.js'></script>
+<script type="text/javascript">
+    function Editor(input , preview){
+        this.update = function(){
+            preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editer = this
+        this.update()
+    }
+
+    var $ = function(id) {
+        return document.getElementById(id)
+    }
+    new Editor($("text-input"),$("preview"))
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<html>
+<head lang="zh-CN"> 
+<% include nav_type.ejs %>
+<script src="/js/cookie-1.1.js"></script>  
+<style type="text/css">
+body { width: 80%;heigth:100%; margin: 40px auto;  padding: 0 20px 0 0;  border-radius:10px;}
+li{list-style: none;}
+h2 {text-align: center;}
+</style>
+</head>
+<body>
+<% include nav.ejs %>
+<br/><br/><br/>
+
+<h2 id="note-body-head" ><font color="#00bb00"><%= head %></font></h2>
+<%- body %>
+</body>
+</html>
