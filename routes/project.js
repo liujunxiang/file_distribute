@@ -20,7 +20,7 @@ router.get('/create/', function(req, res, next) {
     {
         if( typeof(r)=='undefined' )
         {
-            res.redirect('/')
+            res.redirect('/login')
             return 
         }
         res.render('projectcreate' , { type:r.type ,userlist:r.userlist ,pname :''})
@@ -34,7 +34,7 @@ router.post('/create/', function(req, res, next) {
     session=req.cookies.session;
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
 (
@@ -70,14 +70,14 @@ router.get('/list/', function(req, res, next) {
     session=req.cookies.session
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     convert.get_project_list( session ).then( function(r)
     {
         if( typeof(r) == 'undefined' )
         {
-            res.redirect('/')
+            res.redirect('/login')
             return
         }
         console.log( JSON.stringify(r).green)
@@ -114,14 +114,14 @@ router.get('/listself/', function(req, res, next) {
     session=req.cookies.session
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     convert.get_project_list( session ).then( function(r)
     {
         if( typeof(r) == 'undefined' )
         {
-            res.redirect('/')
+            res.redirect('/login')
             return
         }
         console.log( JSON.stringify(r).green)
@@ -159,7 +159,7 @@ router.post('/del/', function(req, res, next) {
     session=req.cookies.session
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     redis.get( config.session.subprefix+session  , function( err , value )
@@ -196,7 +196,7 @@ router.get('/detail/:id/', function(req, res, next) {
     session=req.cookies.session
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     redis.get( config.session.sprefix+session  , function( err , value )
@@ -244,7 +244,7 @@ router.get('/member/add', function(req, res, next) {
     session=req.cookies.session;
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     (
@@ -317,7 +317,7 @@ router.post('/member/create', function(req, res, next) {
     session=req.cookies.session;
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     (
@@ -361,7 +361,7 @@ router.get('/member/list', function(req, res, next) {
     session=req.cookies.session;
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     (
@@ -424,7 +424,7 @@ router.post('/member/del/', function(req, res, next) {
     session=req.cookies.session;
     if( typeof(session ) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return
     }
     (

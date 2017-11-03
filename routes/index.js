@@ -174,8 +174,14 @@ router.post('/markdown/del/', function(req, res, next) {
 
 //
 
-router.get('/', function(req, res, next) {
+router.get('/login', function(req, res, next) {
+    // res.redirect('/home')
     res.render('login' , {title:config.login.title , login_message:config.login.msg})
+});
+
+router.get('/', function(req, res, next) {
+     res.redirect('/home')
+   // res.render('login' , {title:config.login.title , login_message:config.login.msg})
 });
 
 router.get('/visit', function(req, res, next) {
@@ -779,6 +785,6 @@ router.get( '/quit', function(req, res, next) {
         
     }
     res.clearCookie('session');
-    res.redirect( '/' )
+    res.redirect( '/login' )
 })
 module.exports = router;

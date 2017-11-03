@@ -294,14 +294,14 @@ router.get('/upload/', function(req, res, next) {
     session=req.cookies.session
     if( typeof(session) == 'undefined')
     {
-        res.redirect('/')
+        res.redirect('/login')
         return 
     }
     convert.get_project_list(session).then( function( r) 
     {
         if( typeof(r) == 'undefined')
         {
-            res.redirect('/')
+            res.redirect('/login')
             return 
         }
       //  console.log( JSON.stringify(r))
@@ -354,7 +354,7 @@ router.post('/upload/', function(req, res, next) {
             {
                 if( typeof( r) == 'undefined')
                 {
-                    res.redirect('/')
+                    res.redirect('/login')
                     return 
                 }
                 var o = new Object( )
