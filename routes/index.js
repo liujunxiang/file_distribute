@@ -190,6 +190,7 @@ router.get('/visit', function(req, res, next) {
 
 router.get('/user/list/', function(req, res, next) {
     session=req.cookies.session
+    console.log(     session )
     redis.get( config.session.prefix+session  , function( err , value )
     {
         if(!err)
@@ -205,8 +206,9 @@ router.get('/user/list/', function(req, res, next) {
                        if(!_err)
                        {
                            db.collection(config.db.table.user, function (err,collection){
-                               collection.find({},{_id:0}).toArray(function(err,docs)
+                               collection.find( {userid:{$not:{$in:['admin']}}} ,{_id:0}).toArray(function(err,docs)
                                    {
+                                       console.log( docs )  
                                         var action_columns = new Array()	
                                         for( var i in docs[0] )
                                         {

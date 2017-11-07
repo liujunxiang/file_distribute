@@ -166,6 +166,11 @@ async function get_project_list( session )
 async function get_my_project_bysession( session ) 
 {
     let u= await  redis_async.getValue( config.session.prefix+session)
+    console.log(config.session.prefix+session + '==>' +u  )
+    if( u == null)
+    {
+        return 
+    }
     var res=new Object()
     res.user=u
     await mongoose.open()

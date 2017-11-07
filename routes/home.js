@@ -133,6 +133,8 @@ router.get('/:_id', function(req, res, next) {
 //home
 router.get('/', function(req, res, next) {
     session=req.cookies.session
+    console.log(session )
+    
     if( typeof( session) == 'undefined')
     {
         convert.get_article_list().then(function( r ){
@@ -154,6 +156,11 @@ router.get('/', function(req, res, next) {
                    // pname=d.main_title
                     pname=''
                }
+           }
+           else{
+               console.log('empty' + session +'   d is' +d )
+               res.redirect('/login')
+               return 
            }
             redis_async.get( config.session.sprefix+session ).then( function(r)
             {
