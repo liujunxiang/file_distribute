@@ -60,13 +60,13 @@ $(document).ready(function()
 				] , 
                 "columns":[
                 null,
-                {"title":"项目名称" ,"render" :function( data, type, full, meta) {
+                {"title":"课题名称" ,"render" :function( data, type, full, meta) {
                     str= "<a "+"href=\"/project/detail/"+full[0] +"\">"+ data+" (点击查看详细)"  +"</a>"
                    // alert( str )
                     return str
                 }},  
-                {"title":"项目主任" },
-                {"title":"项目秘书" },
+                {"title":"课题负责人" },
+                {"title":"执行秘书" },
                 null
                 ]
 		} );

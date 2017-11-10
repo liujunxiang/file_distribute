@@ -47,13 +47,13 @@ function is_admin( type )
                 <li class="active"><a href="/file/visit/1/">公共资料</a></li>  
                 <% if (type[4] == 1  || type[3] == 1 || type[2] == 1 ) {%>
                 <li>
-                    <a href="/file/visit/2/">项目资料</a>
+                    <a href="/file/visit/2/">课题文档</a>
                 </li>  
                 <% } %>
                 
                 <% if (type[3] ==1 ||  type[2] ==1 ) {%>
                 <li>  
-                    <a href="/file/visit/3/">保密资料</a>  
+                    <a href="/file/visit/3/">保密文档</a>  
                 </li>
                 <% } %>
                 
@@ -82,7 +82,7 @@ function is_admin( type )
                 
                 <% if (type[0]==1 || type[1]== 1 || type[3]== 1 ) {%>
                 <li>   
-                    <a href='/file/list/' class="dropdown-toggle" data-toggle="dropdown" ><%= pname %>资料管理</a>
+                    <a href='/file/list/' class="dropdown-toggle" data-toggle="dropdown" ><%= pname %>课题文档管理</a>
                     <ul class="dropdown-menu my-dropdown-menu">
                         <li><a href="/file/upload/">新增文件</a></li>
                         <li><a href="/file/list/">编辑文件</a></li>
@@ -91,7 +91,7 @@ function is_admin( type )
 
                 <li> 
                     <% if ( type[0]==1 || type[1]== 1 ) {%>
-                    <a href='/project/list/' class="dropdown-toggle" data-toggle="dropdown" >项目管理</a>
+                    <a href='/project/list/' class="dropdown-toggle" data-toggle="dropdown" >课题介绍</a>
                     <% } else { %>
                         <a href='#' class="dropdown-toggle" data-toggle="dropdown" ><%= pname %>成员管理</a>
                     <% } %>
@@ -110,7 +110,7 @@ function is_admin( type )
                 
                 <% if ( type[0]!=1 && type[1]!= 1  && ( type[2] ==1|| type[3] ==1 || type[4] ==1)) {%>
                 <li>   
-                    <a href="/project/listself/">我参与的项目</a>  
+                    <a href="/project/listself/">课题介绍</a>  
                 </li>
                 <% } %>
                 
@@ -139,12 +139,12 @@ function is_admin( type )
                     <% } else { %>
                         <% if (type[2] == 1 ){%>
                             <li >   
-                            <a href="#"><font color="red" >项目负责人</font></a>
+                            <a href="#"><font color="red" >课题负责人</font></a>
                             </li> 
                         <% } else { %>
                             <% if (type[3] == 1 ){%>
                                 <li >   
-                                <a href="#"><font color="red" >项目秘书</font></a>
+                                <a href="#"><font color="red" >执行秘书</font></a>
                                 </li>
                             <% } else { %>
                                 <% if (type[4] == 1 ){%>
