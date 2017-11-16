@@ -24,12 +24,23 @@ $.ajax(
 		type:'post', 
 		async: false,
 		success:function(data){ 
-            if( data.res == 201 )
+           // alert(data.res) 
+            if( data.res == 202 )
             {
                 var h="<p>用户名或者密码错误</p>"
                 $("#login_error").html(h) ;
             }
-            else
+            else if( data.res == 201 )
+            {
+                var h="<p>账号被锁定</p>"
+                $("#login_error").html(h) ;
+            }
+            else if( data.res == 203 )
+            {
+                var h="<p>账号不能为空</p>"
+                $("#login_error").html(h) ;
+            }
+            else if( data.res == 200 )
             {
                 window.location.href='/home'
             }

@@ -74,20 +74,20 @@ function  f()
 <ul class="list-group" id="list_groups">
     
 	<li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">项目名称</label>
+        <label for="firstname" class="col-sm-2 control-label">课题名称</label>
         <input type="text" id="userid" placeholder=""></input>
     </li>
     
     <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">项目简介</label>
+        <label for="firstname" class="col-sm-2 control-label">课题简介</label>
         <!--<input type="text" id="passwd" placeholder=""></input>-->
         <textarea id="passwd"> </textarea>
     </li>
     
     <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">指定项目经理</label>
+        <label for="firstname" class="col-sm-2 control-label">指定课题负责人</label>
         <select name=sel  id="storage_type_p">
-        <option value="">请为项目指定一个项目经理
+        <option value="">请为课题指定一个负责人
         <% for(var i=0;i<userlist.length;i++){%>
         <option  id="optionid" ><%= userlist[i]  %>
          <%}%>
@@ -96,9 +96,9 @@ function  f()
     
     
     <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">指定项目秘书</label>
+        <label for="firstname" class="col-sm-2 control-label">指定课题执行秘书</label>
         <select name=sel  id="storage_type_s">
-        <option value="">请为项目指定一个项目秘书
+        <option value="">请为课题指定一个执行秘书
         <% for(var i=0;i<userlist.length;i++){%>
         <option  id="optionid" ><%= userlist[i] %>
          <%}%>
@@ -106,7 +106,7 @@ function  f()
     </li>
 	
     <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">项目级别</label>
+        <label for="firstname" class="col-sm-2 control-label">课题级别</label>
         <label class="checkbox-inline">
             <input type="checkbox" id="inlineCheckbox1" value="option1" name="ck1"> 核心
         </label>
@@ -120,7 +120,7 @@ function  f()
     </li>
     
 </ul>
-<a onclick="f()" class="button button-raised button-royal">创建项目</a>
+<a onclick="f()" class="button button-raised button-royal">创建课题</a>
 <span ><font id="result" color="#FF0000"></font></span>
 </body>
 </html>

@@ -10,6 +10,7 @@ var project = require('./routes/project');
 var login = require('./routes/login');
 var home = require('./routes/home');
 var file = require('./routes/file');
+var material = require('./routes/material');
 var app = express();
 
 var log4js = require('log4js');
@@ -53,6 +54,7 @@ app.use('/users', users);
 app.use('/project', project );
 app.use('/home', home );
 app.use('/file', file );
+app.use('/material', material );
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -15,11 +15,11 @@ var privateKey  = fs.readFileSync('pem/private.pem', 'utf8');
 var certificate = fs.readFileSync('pem/file.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
-var SSLPORT=444
+/*var SSLPORT=config.sport
 httpsServer.listen(SSLPORT, function() {
     console.log('HTTPS Server is running on: https://localhost:%s', SSLPORT);
 });
-
+*/
 /**
  * Get port from environment and store in Express.
  */

@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
 <html>
 <head>
-<title>文件上传</title>
+<title>素材上传</title>
 <% include nav_type.ejs %>
 <link rel="stylesheet" href="/bootstrap/buttons.css"> 
 </head>
@@ -48,7 +48,7 @@ function debug(  str )
 }
 function  f11()
 {
-    var reg = /^.*[.]((doc|docx)|(ppt|pptx)|(xls|xlsx)|(pdf)|(jpg)|(png)|(project))$/i; 
+    var reg = /^.*[.]((pdf)|(jpg)|(png)|(jpeg))$/i; 
     var data = new FormData();
     var files = $('#file1')[0].files; 
     if (files.length > 0) {
@@ -72,39 +72,12 @@ function  f11()
         file_title="无标题"
     }
     data.append("title",file_title)
-	
-	var file_desc = $("#file_desc").val()
-    if(file_desc==null || file_desc=="" )
-    {
-        file_desc=""
-    }
-    //(data)
-    data.append("desc",file_desc)
-    var typeid=$("#storage_type").val() || 0
-    data.append( "type" , typeid )
-    data.append( "expire" , $("#file_desc_expire").val() || 1 )
-	//alert(data)
-	//$("#storage_project").find("option[text='项目组']").attr("selected",true);  
-    var issuper=<%= issuper %>
-    if( issuper == true)
-    {
-        if( $("#storage_project").val() == '')
-        {
-            document.getElementById("storage_type_project").innerHTML="课题未指定"
-            return 
-        }
-        data.append( "project" , $("#storage_project").val() )
-        if( $("#storage_project").val() != '公共课题'  && typeid == 3 )
-        {
-            document.getElementById("storage_type_project").innerHTML="所有项目成员均可访问的文档必须放置到公共课题"
-            return
-        }
-    }
+    //alert( JSON.stringify(data ))
     $.ajax({
     cache: false,
     type: 'post',
     dataType: 'json',
-    url:'/file/upload/',			        
+    url:'/material/',			        
     data : data,
     contentType: false,
     processData: false,
@@ -116,7 +89,7 @@ function  f11()
         }
         else if( data.res == 200 )
         {
-            self.location='/file/list/'
+            self.location='/material/list/'
         }
         return
     },
@@ -143,45 +116,9 @@ function  f11()
     <input type="file"  id="file1" name="file1"/ ><span ><font id="code" color="#FF0000"></font></span>
     </li>
 
-    <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">设置文件访问权限</label>
-        <select name=sel  id="storage_type">
-        <option value="">请设置文件访问权限
-        <option value="0">@所有人
-        <option value="1">@课题成员
-        <option value="2">@课题管理人员
-		<option value="3">@项目成员
-        </select>
-      <span><font id="storage_type" class="log_warnning" color="#FF0000"></font></span>
-    </li>
-    <% if ( issuper ) {%>
-    <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">指定课题</label>
-        <select name=sel  id="storage_project">
-        <option value="">请设置文件放置课题
-        <% for(var i=0;i<projectlist.length;i++){%>
-            <option  id="optionid" ><%= projectlist[i].title %>
-         <%}%>
-		 <option  id="optionid" >公共课题
-        </select>
-        <span><font id="storage_type_project" class="log_warnning" color="#FF0000"></font></span>
-    </li>
-    <% } %>
-    
-    
-    <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">文件描述</label>
-        <input type="text" id="file_desc" placeholder="请输入文件描述"></input>
-    </li>
-    
-    <li class="list-group-item">
-        <label for="firstname" class="col-sm-2 control-label">最大保存时间</label>
-        <input type="text" id="file_desc_expire" placeholder="请输入文保存时间"></input>
-    </li>
-
 </ul>
 </br>
-<a onclick="f11()" class="button button-raised button-royal">文件上传</a>
+<a onclick="f11()" class="button button-raised button-royal">上传素材</a>
 <span ><font id="result" color="#FF0000"></font></span>
 </body>
 </html>

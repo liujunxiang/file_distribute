@@ -2,6 +2,8 @@ var mongoose=require('./mongoose')
 var config = require( '../config/config')
 var redis_async=require('./redis_async')
 var md = require('markdown-js');
+var log4js = require('log4js');
+var loggerer = log4js.getLogger(__filename.replace(/.*\//g,''));
 function str_2_array ( str )
 {
     var arr = new Array()
@@ -25,7 +27,14 @@ function array_2_str (arr)
     
 async function get_user_info( u ,p) 
 {
-    //console.log( p )
+    let permission=await redis_async.getValue('login_permisson_try_'+u)
+    if( permission!=null )
+    {
+        if( permission==~~3)
+        {
+            return 'locked'
+        }
+    }
     var res=new Object()
     await mongoose.open()
     let collection_user=await  mongoose.collection(config.db.table.user)
@@ -45,12 +54,12 @@ async function get_user_info( u ,p)
     }
     if( user_list.length != 1)
     {
+        redis_async.incr('login_permisson_try_'+u)
+        redis_async.expire('login_permisson_try_'+u , config.lock )
         console.log( ("user["+u+"],passwd["+p+"] authentic failed" ).red)
         mongoose.close()
         return
     }
-   // if( typeof(user_list ))
-   // console.log( res )
     res.ulist=user_list[0] 
     let collection_project=await  mongoose.collection(config.db.table.project)
     var detail=new Array()
@@ -166,10 +175,15 @@ async function get_project_list( session )
 async function get_my_project_bysession( session ) 
 {
     let u= await  redis_async.getValue( config.session.prefix+session)
-    console.log(config.session.prefix+session + '==>' +u  )
+    loggerer.info(config.session.prefix+session + '==>' +u  )
     if( u == null)
     {
+        loggerer.error('empty   '  + config.session.prefix+session  )
         return 
+    }
+    if( u=='admin')
+    {
+        return true
     }
     var res=new Object()
     res.user=u
@@ -179,7 +193,7 @@ async function get_my_project_bysession( session )
     if(user_list.length != 1 )
     {
         mongoose.close()
-        console.log(222222)
+        loggerer.error('empty user_list ,not found user ' + u  )
         return 
     }
     res.ulist=user_list[0] 
@@ -220,6 +234,7 @@ async function get_file_list( session , level  ,excludes )
         exclude = excludes
     }
     let type= await  redis_async.getValue( config.session.sprefix+session)
+    loggerer.info( 'type='+type)
     let user= await  redis_async.getValue( config.session.prefix+session)
     await mongoose.open()
     let c_f=await  mongoose.collection(config.db.table.project)
@@ -230,6 +245,10 @@ async function get_file_list( session , level  ,excludes )
         case 1:
         condition.type=0
         condition.status=1
+        if( type != null )
+        {
+            condition.type={$in:[ 0,3]}
+        }
         break;
         case 2:
         var title_array=new Array()
@@ -283,7 +302,7 @@ async function get_file_list( session , level  ,excludes )
         mongoose.close()
         return 
     }
-   // console.log( JSON.stringify(condition))
+    loggerer.info( JSON.stringify(condition))
     
     let c_file=await  mongoose.collection(config.db.table.file)
     let data=await  mongoose.select(c_file ,condition , exclude )

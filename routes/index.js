@@ -13,6 +13,10 @@ var markdown = require('markdown');
 var md = require('markdown-js');
 var redis_async=require('./redis_async')
 var convert=require('./convert')
+var mongoose=require('./mongoose')
+var log4js = require('log4js');
+var loggerer = log4js.getLogger(__filename.replace(/.*\//g,''));
+
 router.get('/test', function(req, res, next) {
     session=req.cookies.session
     convert.get_file_list( session , 5 ,  {_id:0,title:1,
@@ -46,6 +50,51 @@ router.get('/markdown', function(req, res, next) {
     
 })
 
+
+router.get('/markdown/edit/:_id', function(req, res, next) {
+    session=req.cookies.session
+    if( typeof(session) == 'undefined')
+    {
+        loggerer.error('session is none')
+        res.redirect('/login')
+        return 
+    }
+    ( async function(){
+        let string_type=await  redis_async.getValue( config.session.sprefix+session)
+        loggerer.info( 'loggin type is ' + string_type)
+        if( string_type == null || string_type == '')
+        {
+            loggerer.error( 'loggin type is null' )
+            return 
+        }
+        var value=convert.str_2_array(string_type  )
+         
+       // ids=mongo.ObjectId(req.body._id)
+        loggerer.info('key is ' + req.params._id  )
+        await mongoose.open()
+        let collection_article=await  mongoose.collection(config.db.table.article)
+        loggerer.info( config.db.table.article)
+        let article = await  mongoose.select( collection_article,{key:req.params._id})
+        var c=''
+        var t=''
+        loggerer.info('article is ' + JSON.stringify(article) ) 
+        if(article.length == 1 )
+        {
+            c=article[0].content
+            t=article[0].title
+        }
+        res.render('markdown_template' ,{ 
+            type:value ,
+            pname:'' ,
+            textareadata:c,
+            aricletitle:t,
+            key:req.params._id
+            }
+        )
+        mongoose.close()
+    })()
+})
+
 router.post('/markdown', function(req, res, next) {
     session=req.cookies.session
     redis.get( config.session.subprefix+session  , function( err , value )
@@ -66,6 +115,7 @@ router.post('/markdown', function(req, res, next) {
                                 o.content=req.body.text
                                 o.title=req.body.title
                                 o.date = sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss');
+                                o.key=node_uuid.v4().replace(/[-]/g , ""  ) 
                                 collection.insert( o )
                                 res.writeHead(200, {'Content-Type': 'application/json'});
                                 res.end(JSON.stringify( config.msg.success ))
@@ -81,9 +131,62 @@ router.post('/markdown', function(req, res, next) {
 })
 
 
+router.post('/markdownupdate/', function(req, res, next) {
+    session=req.cookies.session
+    if( typeof(session) == 'undefined')
+    {
+        loggerer.error('session is none')
+        res.redirect('/login')
+        return 
+    }
+    loggerer.info( 'req is ' + JSON.stringify(req.body))
+    redis.get( config.session.subprefix+session  , function( err , value )
+    {
+        if(!err)
+        {
+           if( value != null  && value != '')
+           {
+               if( ~~value >=4 )
+               {
+                   var server=new mongo.Server( config.db.host,config.db.port,{auto_reconnect:true } )
+                    var db=new mongo.Db( config.db.dbname ,server,{safe:true});
+                    db.open( function (_err,db)
+                        {
+                            db.collection('article', function (err,collection)
+                            {
+                                /*
+                                var o=new Object()
+                                o.content=req.body.text
+                                o.title=req.body.title
+                                o.date = sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss');
+                                o.key=node_uuid.v4().replace(/[-]/g , ""  ) 
+                                collection.insert( o )*/
+                                collection.update({key:req.body.key } ,{$set:{content:req.body.text ,  
+                                title:req.body.title,
+                                date : sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss')
+                                } } )
+                                res.writeHead(200, {'Content-Type': 'application/json'});
+                                res.end(JSON.stringify( config.msg.success ))
+                            }
+                            )
+                        }
+                    )
+               }//endif if( value ==  config.superuser.user)
+           }//end if( value != null  && value != '')
+        }
+    }
+    )
+})
+
 //
 router.get('/markdown/list/', function(req, res, next) {
     session=req.cookies.session
+    if( typeof(session) == 'undefined')
+    {
+        loggerer.error('session is none')
+        res.redirect('/login')
+        return 
+    }
     redis.get( config.session.sprefix+session  , function( err , value )
     {
         if(!err)
@@ -99,7 +202,7 @@ router.get('/markdown/list/', function(req, res, next) {
                        if(!_err)
                        {
                            db.collection('article', function (err,collection){
-                               collection.find({},{_id:1,title:1}).toArray(function(err,docs)
+                               collection.find({},{_id:1,title:1,key:1}).toArray(function(err,docs)
                                    {
                                         var action_columns = new Array()	
                                         for( var i in docs[0] )
@@ -190,7 +293,11 @@ router.get('/visit', function(req, res, next) {
 
 router.get('/user/list/', function(req, res, next) {
     session=req.cookies.session
-    console.log(     session )
+    if( typeof( session) == 'undefined')
+    {
+        res.redirect('/login')
+        return
+    }
     redis.get( config.session.prefix+session  , function( err , value )
     {
         if(!err)

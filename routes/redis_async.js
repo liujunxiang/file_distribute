@@ -21,5 +21,13 @@ async function getV( key )
 
 module.exports={ 
 get:getV,
-getValue:getValue
+getValue:getValue,
+incr:function(key)
+{
+    client.incr(key)
+},
+expire:function( key ,ttl )
+{
+    client.expire(key , ttl)
+}
 }

@@ -23,14 +23,16 @@
 <script>
  function f()
  {
+    var key="<%= key %>"
     var obj = new Object();
     obj.text=$("#text-input").val()
     if( obj.text == null  || obj.text=='') { obj.text="空" }
     obj.title= $("#msg_for_title").val() 
     if( obj.title == null  || obj.title=='') { 
     obj.title="TEST" }
+    obj.key=key
     $.ajax({
-    url:  "/markdown/", 
+    url:  "/markdownupdate/", 
     data:JSON.stringify(obj), 
     contentType: "application/json; charset=utf-8",
     dataType:'json', 
@@ -48,12 +50,13 @@
 <body style="padding:0px;background:#FFFFFF;">
 <% include nav.ejs %>
 <br/><br/><br/>
-<input type="text" id="msg_for_title" value="在此输入标题 !!!" ></input>
+<input type="text" id="msg_for_title" value="<%= aricletitle %>" ></input>
 <div id="blog-publish" >
-<a  onclick="f()" class="btn btn-danger btn-lg btn-blog-publish" data-original-title="" title="">发布新闻</a>
+<a  onclick="f()" class="btn btn-danger btn-lg btn-blog-publish" data-original-title="" title="">确认编辑</a>
 </div>
 <br/>
 <textarea id="text-input" oninput="this.editer.update()" style="width:100%;height:100%; background:#CBEFD9;font-size:22px;">
+<%= textareadata %>
 </textarea>
 <!--<div id="preview" style="float:right;width:50%;height:100%; border:0.5px solid #315;background:#FFFFFF;"></div>-->
 <script src='javascripts/markdown.js'></script>

@@ -13,7 +13,9 @@ var markdown = require('markdown');
 var md = require('markdown-js');
 var redis_async=require('./redis_async')
 var convert=require('./convert')
-
+var mongoose=require('./mongoose')
+var log4js = require('log4js');
+var loggerer = log4js.getLogger(__filename.replace(/.*\//g,''));
 /* GET home page. */
 json_2_array=function ( obj )
 {
@@ -29,63 +31,98 @@ json_2_array=function ( obj )
 
 router.get('/check/', function(req, res, next) {
     session=req.cookies.session
-    redis.get( config.session.sprefix+session  , function( err , values )
+    if( typeof(session) == 'undefined')
     {
-        if(!err)
-        {
-           if( values != null  && values != '')
-           {
-               var value=convert.str_2_array(values  )
-               var server=new mongo.Server( config.db.host,config.db.port,{auto_reconnect:true } )
-               var db=new mongo.Db( config.db.dbname ,server,{safe:true});
-               db.open( function (_err,db)
-               {
-                   if(!_err)
-                   {
-                       db.collection(config.db.table.file, function (err,collection){
-                           collection.find({status:0},{_id:0,title:1,
-                           filename:1,size:1,userid:1,status:1}).toArray(function(err,docs)
-                               {
-                                    var action_columns = new Array()	
-                                    for( var i in docs[0] )
-                                    {
-                                        var obj =new Object()
-                                        obj.title = i 
-                                        action_columns.push( obj )							
-                                    }
-
-                                    var action_dataset =  new Array() 
-                                    for( var i = 0 ; i < docs.length ;i++ )
-                                    {
-                                        b =  json_2_array( docs[i] )
-                                        action_dataset.push(b )
-                                    }
-                                    res.render( 'filecheck' , 
-                                        {user_dataset:JSON.stringify(action_dataset)  , 
-                                        user_column:JSON.stringify( action_columns )   ,
-                                            type:value,
-                                            pname:'' , 
-                                            title:config.title || 'test' ,
-                                            session:session
-                                        } 
-                                    )
-                               }
-                               )
-                       }
-                       )
-                   }//endif 
-               }//end db open 
-               )
-           }
-        }
+        loggerer.error('session is none')
+        res.redirect('/login')
+        return 
     }
-    )
+    
+    ( async function(){
+        let u= await  redis_async.getValue( config.session.prefix+session)
+        loggerer.info( 'loggin user is ' + u)
+        let string_type=await  redis_async.getValue( config.session.sprefix+session)
+        loggerer.info( 'loggin type is ' + string_type)
+        if( string_type == null || string_type == '')
+        {
+            loggerer.error( 'loggin type is null' )
+            mongoose.close()
+            return 
+        }
+        var project_list=null;
+        await mongoose.open()
+        var value=convert.str_2_array(string_type  )
+        if( value[2] == 1 )
+        {
+            loggerer.info( ' master ')
+            loggerer.info( ' switch  ' + config.db.table.project)
+            let collection_user=await  mongoose.collection(config.db.table.project)
+            let project_list_ = await  mongoose.select( collection_user,{type_p:u } , {_id:0,title:1})
+            project_list=project_list_
+            loggerer.info( 'project list is:' + JSON.stringify(project_list ))
+        }
+        var exclude={_id:0,title:1,filename:1,size:1,userid:1,status:1}
+        loggerer.info( 'exclude  is:' + JSON.stringify(exclude))
+        var cond=new Object()
+        cond.status=0
+        if(project_list != null )
+        {
+            
+          //  loggerer.info( typeof(project_list) )
+            var arr=new Array()
+            for( var i=0; i < project_list.length ;i++)
+            {
+                arr.push( project_list[i].title )
+            }
+            if( config.public_check == true)
+            {
+                arr.push('公共课题')
+            }
+            cond.project={$in:arr}
+        }
+        loggerer.info( 'cond  is:' + JSON.stringify(cond))
+        let collection_file=await  mongoose.collection(config.db.table.file)
+        let file_list=await  mongoose.select( collection_file,cond , exclude)
+        loggerer.info( 'file_list  is:' + JSON.stringify(file_list))
+        
+        
+        var action_columns = new Array()
+        for( var i in file_list[0] )
+        {
+            var obj =new Object()
+            obj.title = i 
+            action_columns.push( obj )							
+        }
+        var action_dataset =  new Array() 
+        for( var i = 0 ; i < file_list.length ;i++ )
+        {
+            b =  json_2_array( file_list[i] )
+            action_dataset.push(b )
+        }
+        res.render( 'filecheck' , 
+            {user_dataset:JSON.stringify(action_dataset)  , 
+            user_column:JSON.stringify( action_columns )   ,
+            type:value,
+            pname:'' , 
+            title:config.title || 'test' ,
+            session:session
+            } 
+        )
+        mongoose.close()
+        return 
+    })()
 } 
 )
 
 //
 router.post('/check/', function(req, res, next) {
     session=req.cookies.session
+    if( typeof(session) == 'undefined')
+    {
+        loggerer.error('session is none')
+        res.redirect('/login')
+        return 
+    }
     redis.get( config.session.subprefix+session  , function( err , value )
     {
         if(!err)
@@ -121,14 +158,15 @@ router.post('/check/', function(req, res, next) {
 router.get('/visit/:id/', function(req, res, next) {
     id=req.params.id
     session=req.cookies.session
+    loggerer.info( 'id=' +id +' session=' + session)
     convert.get_file_list( session , ~~id ).then(function(r)
     {
         if( typeof(r) == 'undefined')
         {
-            res.direct('/')
+            res.redirect('/')
             return 
         }
-        console.log( JSON.stringify (r ) )
+       // console.log( JSON.stringify (r ) )
         var docs=r.data 
         var action_columns = new Array()	
         for( var i in docs[0] )
@@ -274,9 +312,37 @@ router.post('/del/', function(req, res, next) {
                                 var cond=req.body
                                 cond.size=~~cond.size
                                 console.log(cond )
-                                collection.remove( cond  )
-                                res.writeHead(200, {'Content-Type': 'application/json'});
-                                res.end(JSON.stringify( config.msg.success ))
+                                collection.find( cond ).toArray( function(err,docs)
+                                {
+                                    if(err)
+                                    {
+                                        res.writeHead(200, {'Content-Type': 'application/json'});
+                                        res.end(JSON.stringify( {res:201} ))
+                                        return 
+                                    }
+                                    if(docs.length ==1)
+                                    {
+                                        var file_abs=__dirname+'/../public/'+docs[0].encode_filename
+                                        var tmpdir=file_abs.substring( 0,file_abs.lastIndexOf('/')+1 )
+                                        console.log(file_abs )
+                                        console.log(tmpdir)
+                                        if( fs.existsSync( file_abs ) == true )
+                                        {
+                                            console.log( 'rmfile ==>' + file_abs )
+                                            fs.unlinkSync(file_abs) 
+                                            console.log( 'rmdir ==>' + tmpdir )
+                                            fs.rmdirSync(tmpdir )
+                                        }
+                                    }
+                                    collection.remove( cond   )
+                                    res.writeHead(200, {'Content-Type': 'application/json'});
+                                    res.end(JSON.stringify( config.msg.success ))
+                                }
+                                )
+                                
+                                
+                                
+                                
                             }
                             )
                         }
@@ -316,20 +382,33 @@ router.get('/upload/', function(req, res, next) {
 )
 
 router.post('/upload/', function(req, res, next) {
+    var dir=node_uuid.v1().replace(/[-]/g , ""  ) 
     session=req.cookies.session
+    if( typeof(session) == 'undefined')
+    {
+        loggerer.error( 'session is none')
+        res.redirect('/login') 
+        return 
+    } 
     AVATAR_UPLOAD_FOLDER = '/resource/'
+    dir='public' + AVATAR_UPLOAD_FOLDER+dir+'/'
+    loggerer.info( 'dir='+dir)
+    fs.mkdirSync(dir)
     var form = new formidable.IncomingForm();   //创建上传表单
     form.encoding = 'utf-8';		//设置编辑
-    form.uploadDir = 'public' + AVATAR_UPLOAD_FOLDER;	 //设置上传目录
+    form.uploadDir = dir	 //设置上传目录
     form.keepExtensions = true;	 //保留后缀
-    form.maxFieldsSize = 2 * 1024 * 1024;   //文件大小
+    form.maxFieldsSize = config.max_upload_size;   //文件大小
     form.parse(req, function(err, fields, files) 
     {     
     var title = fields.title 
     var desc = fields.desc
     var type=fields.type
-    var f=files.codecsv.path
+    
+    
     var file_srcname = files.codecsv.name
+    var f=dir+file_srcname
+    fs.renameSync( files.codecsv.path , f)
     fs.exists(f , function(exists) {
         if( !exists )
         {
@@ -343,7 +422,7 @@ router.post('/upload/', function(req, res, next) {
             stat=fs.fstatSync(fd)
             fs.closeSync(fd )
         }
-        if( stat.size > 20*1024*1024 )
+        if( stat.size > config.max_upload_size )
         {
             res.writeHead(200, {"Content-Type": "application/json"}); 
             res.end( JSON.stringify({"res":201}))
@@ -370,15 +449,18 @@ router.post('/upload/', function(req, res, next) {
                 o.expire=~~fields.expire
                 if(typeof( fields.project ) != 'undefined' &&( r.type[0] == 1 || r.type[0] == 1 ))
                 {
+                    loggerer.info( 'locate 1')
                     o.project=fields.project
                 }
                 else
                 {
+                    loggerer.info( 'locate 1')
                     o.project=r.project 
                 }
                 convert.insert_file( o).then(function(r)
                 {
-                    console.log( JSON.stringify(o)) 
+                   // console.log( ) 
+                   loggerer.info('save file ==>' + JSON.stringify(o) )
                     res.writeHead(200, {"Content-Type": "application/json"}); 
                     res.end(JSON.stringify( {"res":200} ));
                 }

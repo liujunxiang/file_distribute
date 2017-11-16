@@ -13,6 +13,9 @@ var markdown = require('markdown');
 var md = require('markdown-js');
 var convert= require('./convert')
 var redis_async=require('./redis_async')
+var log4js = require('log4js');
+var loggerer = log4js.getLogger(__filename.replace(/.*\//g,''));
+var mongoose=require('./mongoose')
 /* GET home page. */
 json_2_array=function ( obj )
 {
@@ -26,7 +29,9 @@ json_2_array=function ( obj )
 
 router.get('/:_id', function(req, res, next) {
     session=req.cookies.session
+    
     id=mongo.ObjectId( req.params._id )
+    loggerer.info( 'id is' + id )
     if( typeof( session) == 'undefined' )
     {
         var server=new mongo.Server( config.db.host,config.db.port,{auto_reconnect:true } )
@@ -130,13 +135,20 @@ router.get('/:_id', function(req, res, next) {
 })
 
 
+//
+
+
 //home
 router.get('/', function(req, res, next) {
     session=req.cookies.session
-    console.log(session )
-    
+ //   console.log(session )
+    var forwardedIpsStr = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress
     if( typeof( session) == 'undefined')
     {
+        loggerer.info(`visitor login {ip} is`  , forwardedIpsStr )
         convert.get_article_list().then(function( r ){
             res.render('home'  ,  {title:config.title || 'test'  , 
             copyright:config.footer.copyright , 
@@ -146,6 +158,7 @@ router.get('/', function(req, res, next) {
         })
     }
     else{//
+        loggerer.info(`{session} is ,{ip} is `  , session ,forwardedIpsStr)
         convert.get_my_project(session ).then( function(d)
         {
             var pname=''
@@ -158,7 +171,7 @@ router.get('/', function(req, res, next) {
                }
            }
            else{
-               console.log('empty' + session +'   d is' +d )
+               loggerer.error('empty' + session +'   d is' +d +' redirect /login' )
                res.redirect('/login')
                return 
            }

@@ -31,7 +31,7 @@ var timer
 var winOpen 
 function IfWindowClosed() { 
 if (winOpen.closed == true) { 
-    self.location='/user/list/'
+    self.location='/file/list/'
     window.clearInterval(timer) 
 } 
 
@@ -48,71 +48,36 @@ $(document).ready(function()
 			"info":false,
 			"lengthChange":false,
 			"columnDefs": [
-                {
-						"targets": -1,//删除
-						"data": null,
-						"defaultContent": "<button id='edit' class='btn btn-primary' type='button'><i class='fa fa-trash-o'></i>修改密码</button> <button id='delrow' class='btn btn-primary btn-warning' type='button'><i class='fa fa-trash-o'></i>删除</button>"
-				}
-				] , 
-                "columns":[
-                {"title":"用户名" },
-                {"title":"密码" },
-                {"title":"用户类型" , "render" :function( data, type, full, meta){
-                    if(~~data == 0)
-                    {
-                        return "<b>"+"一般用户"+"</b>"
-                    }
-                    if( ~~data == 1)
-                    {
-                        return  '<b><font color="red">'+"二级管理员"+"</font></b>" 
-                    }
-                } },
-                null
-                ]
+				],
+            "columns": [ 
+                {"title":"素材主题" },
+                {"title":"素材地址" ,"render" :function( data, type, full, meta) {
+                    str= "<a href=\"" + data+"\" >"+ data+" </a>"
+                   // alert( str )
+                    return str
+                } }
+            ],
 		} );
         
-   
+   /*
 		$('#user tbody').on( 'click', 'button#delrow', function () {
             var data = tables.row( $(this).parents('tr') ).data();
-			//alert(data)
 			$.ajax({
-                url: '/user/del/',
+                url: '/file/del/',
                 type: 'POST',
                 dataType: 'json',
-                data: {userid: data[0]},
+                data: {title: data[0] , filename:data[1] , size:data[3] , userid:data[5] },
             })
             .success( function()
             {
-                self.location='/user/list/'
+                self.location='/file/list/'
             })
             .done(function(data) {
             })
             .fail(function() {
                 alert("删除数据失败");
             });
-        });
-        
-        $('#user tbody').on( 'click', 'button#edit', function () {
-            var data = tables.row( $(this).parents('tr') ).data();
-            var userid=data[0]
-            var passwd=prompt("请输入修改后的密码");
-            var obj = new Object();
-            obj.userid=userid
-            obj.passwd=passwd
-            $.ajax({
-            url:  "/alteruserpasswd/user/", 
-            data:JSON.stringify(obj), 
-            contentType: "application/json; charset=utf-8",
-            dataType:'json', 
-            type:'post', 
-            async: false,
-            success : function ( data) 
-            {
-                self.location='/user/list/'
-            }
-            }
-            );
-		});
+        });*/
 	} 
 
 );
@@ -128,7 +93,7 @@ $(document).ready(function()
         }
         #user
         {
-            background-color: #99FFFF;
+            background-color: #1E8;
             margin-top:0%;
         }
         </style>
